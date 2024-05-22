@@ -7,10 +7,10 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Post("/triangle/classify")
-  processTriangle(@Body() triangle: any): ResponseClassification {
-    if (!triangle) throw new BadRequestException('Triangle not defined');
+  processTriangle(@Body() body: any): ResponseClassification {
+    if (!body) throw new BadRequestException('Body is required');
 
-    const { sideA, sideB, sideC } = triangle;
+    const { sideA, sideB, sideC } = body;
     if (!sideA || !sideB || !sideC) throw new BadRequestException('Triangle side not found');
     
     return this.appService.processTriangle(Number(sideA), Number(sideB), Number(sideC));

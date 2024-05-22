@@ -7,7 +7,7 @@ export enum Classification {
 }
 
 export interface ResponseClassification {
-    classification: Classification
+    type: Classification
     angles : Angles
 }
 

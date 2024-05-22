@@ -6,11 +6,11 @@ export class AppService {
   processTriangle(sideA: number, sideB: number, sideC: number): ResponseClassification {
 
     const data : ResponseClassification = {
-      classification: this.classifyTriangle(sideA, sideB, sideC),
+      type: this.classifyTriangle(sideA, sideB, sideC),
       angles: null
     }
 
-    if (data.classification) {
+    if (data.type) {
       data.angles = this.calculateAnglesCos(sideA, sideB, sideC);
     }
 
